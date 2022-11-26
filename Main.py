@@ -3,6 +3,13 @@ from OpenGL.GLU import *
 from OpenGL.GLUT import *
 
 import random as rd
+import csv
+
+_txt = []
+with open ('word.csv', 'r') as word:
+    words = csv.reader(word)
+    for txt in words:
+        _txt.append(txt)
 
 # TITIK KOORDINAT, KOLISION, DAN TRIGGER SATELIT
 x_satelite, y_satelite = 50, 250
@@ -16,6 +23,8 @@ trg_bullet = False
 
 # TITIK KOORDINAT DAN TEKS METEOR
 x_meteor, y_meteor = 1025, rd.randint(50,675)
+txt_meteor = _txt[0][rd.randint(0, len(_txt[0])-1)]
+print(txt_meteor)
 
 # FUNGSI MENAMPILKAN SATELIT
 def Satelite():
