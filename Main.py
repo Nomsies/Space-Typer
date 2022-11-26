@@ -5,6 +5,16 @@ from OpenGL.GLUT import *
 import random as rd
 import csv
 
+"""
+BUG:
+- PELURU TERKADANG MELEWATI METEOR
+
+KEKURANGAN:
+- DESAIN KARAKTER DAN LAINNYA
+- MENU AWAL
+- JUMLAH METEOR DAN PELURU
+"""
+
 _txt = []
 with open ('word.csv', 'r') as word:
     words = csv.reader(word)
@@ -104,7 +114,7 @@ def Letter(letter, x):
         glVertex2f( 2.5, 5.0); glVertex2f( 2.5,-3.5)
 
     elif letter.lower() == 'k':
-        glVertex2f(-2.5, 5.0); glVertex2f( 2.5,-5.0)
+        glVertex2f(-2.5, 5.0); glVertex2f(-2.5,-5.0)
         glVertex2f(-2.5, 0.0); glVertex2f( 2.5, 5.0)
         glVertex2f(-2.5, 0.0); glVertex2f( 2.5,-5.0)
 
@@ -351,7 +361,7 @@ glutInit()
 glutInitDisplayMode(GLUT_RGBA)
 glutInitWindowSize(1000, 1000)
 glutInitWindowPosition(0, 0)
-glutCreateWindow("Star Track")
+glutCreateWindow("Space Typer")
 glutDisplayFunc(showScreen)
 glutKeyboardFunc(Control)
 glutIdleFunc(showScreen)
