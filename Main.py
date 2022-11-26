@@ -25,6 +25,198 @@ trg_bullet = False
 x_meteor, y_meteor = 1025, rd.randint(50,675)
 txt_meteor = list(_txt[0][rd.randint(0, len(_txt[0])-1)])
 
+# FUNGSI UNTUK MENAMPILKAN HURUF
+def Letter(letter, x):
+    glPushMatrix()
+    glTranslated(x_meteor + x, y_meteor-50, 0)
+    glLineWidth(1.5)
+    glBegin(GL_LINES)
+
+    if letter.lower() == 'a':
+        glVertex2f( 0.0, 5.0)
+        glVertex2f(-2.5,-5.0)
+        glVertex2f( 0.0, 5.0)
+        glVertex2f( 2.5,-5.0)
+        glVertex2f(-1.0, 0.0)
+        glVertex2f( 1.0, 0.0)
+
+    elif letter.lower() == 'b':
+        glVertex2f(-2.5, 5.0); glVertex2f(-2.5,-5.0) # | 
+        glVertex2f(-2.5,-5.0); glVertex2f( 1.0,-5.0) # _
+        glVertex2f(-2.5, 0.0); glVertex2f( 1.0, 0.0) # -
+        glVertex2f(-2.5, 5.0); glVertex2f( 1.0, 5.0) # _
+        glVertex2f( 2.5,-3.5); glVertex2f( 2.5,-1.5) # |
+        glVertex2f( 2.5,-1.5); glVertex2f( 1.0, 0.0) # /
+        glVertex2f( 1.0, 0.0); glVertex2f( 2.5, 1.5) # /
+        glVertex2f( 2.5, 1.5); glVertex2f( 2.5, 3.5) # |
+        glVertex2f( 1.0, 5.0); glVertex2f( 2.5, 3.5) # \
+        glVertex2f( 1.0, 0.0); glVertex2f( 1.0,-1.5) # \
+
+    elif letter.lower() == 'c':
+        glVertex2f( 2.5, 5.0); glVertex2f(-1.0, 5.0)
+        glVertex2f(-1.0, 5.0); glVertex2f(-2.5, 3.5)
+        glVertex2f(-2.5, 3.5); glVertex2f(-2.5,-3.5)
+        glVertex2f(-2.5,-3.5); glVertex2f(-1.0,-5.0)
+        glVertex2f(-1.0,-5.0); glVertex2f( 2.5,-5.0)
+
+    elif letter.lower() == 'd':
+        glVertex2f(-2.5, 5.0); glVertex2f(-2.5,-5.0) # |
+        glVertex2f(-1.0,-5.0); glVertex2f(-2.5,-5.0) # _
+        glVertex2f(-1.0,-5.0); glVertex2f( 2.5,-3.5) # /
+        glVertex2f( 2.5,-3.5); glVertex2f( 2.5, 3.5) # |
+        glVertex2f( 1.0, 5.0); glVertex2f( 2.5, 3.5) # \
+        glVertex2f( 1.0, 5.0); glVertex2f(-2.5, 5.0) # _
+
+    elif letter.lower() == 'e':
+        glVertex2f(-2.5, 5.0); glVertex2f( 2.5, 5.0)
+        glVertex2f(-2.5, 0.0); glVertex2f( 2.5, 0.0)
+        glVertex2f(-2.5,-5.0); glVertex2f( 2.5,-5.0)
+        glVertex2f(-2.5,-5.0); glVertex2f(-2.5, 5.0)
+
+    elif letter.lower() == 'f':
+        glVertex2f(-2.5, 5.0); glVertex2f( 2.5, 5.0)
+        glVertex2f(-2.5, 0.0); glVertex2f( 3.5, 0.0)
+        glVertex2f(-2.5, 5.0); glVertex2f(-2.5,-5.0)
+
+    elif letter.lower() == 'g':
+        glVertex2f( 2.5, 5.0); glVertex2f(-1.0, 5.0)
+        glVertex2f(-1.0, 5.0); glVertex2f(-2.5, 3.5)
+        glVertex2f(-2.5, 3.5); glVertex2f(-2.5,-3.5)
+        glVertex2f(-2.5,-3.5); glVertex2f(-1.0,-5.0)
+        glVertex2f(-1.0,-5.0); glVertex2f( 1.0,-5.0)
+        glVertex2f( 1.0,-5.0); glVertex2f( 2.5,-3.5)
+        glVertex2f( 2.5,-3.5); glVertex2f( 2.5, 0.0)
+        glVertex2f( 2.5, 0.0); glVertex2f( 0.0, 0.0)
+
+    elif letter.lower() == 'h':
+        glVertex2f(-2.5, 5.0); glVertex2f(-2.5,-5.0)
+        glVertex2f(-2.5, 0.0); glVertex2f( 2.5, 0.0)
+        glVertex2f( 2.5, 5.0); glVertex2f( 2.5,-5.0)
+    
+    elif letter.lower() == 'i':
+        glVertex2f( 0.0, 5.0); glVertex2f( 0.0,-5.0)
+    
+    elif letter.lower() == 'j':
+        glVertex2f(-2.5, 0.0); glVertex2f(-2.5,-3.5)
+        glVertex2f(-2.5,-3.5); glVertex2f(-1.0,-5.0) 
+        glVertex2f( 1.0,-5.0); glVertex2f(-1.0,-5.0) 
+        glVertex2f( 2.5,-3.5); glVertex2f( 1.0,-5.0) 
+        glVertex2f( 2.5, 5.0); glVertex2f( 2.5,-3.5)
+
+    elif letter.lower() == 'k':
+        glVertex2f(-2.5, 5.0); glVertex2f( 2.5,-5.0)
+        glVertex2f(-2.5, 0.0); glVertex2f( 2.5, 5.0)
+        glVertex2f(-2.5, 0.0); glVertex2f( 2.5,-5.0)
+
+    elif letter.lower() == 'l':
+        glVertex2f(-2.5, 5.0); glVertex2f(-2.5,-5.0)
+        glVertex2f( 2.5,-5.0); glVertex2f(-2.5,-5.0)
+    
+    elif letter.lower() == 'm':
+        glVertex2f(-2.5, 5.0); glVertex2f(-2.5,-5.0)
+        glVertex2f(-1.25, 0.0); glVertex2f(-2.5, 5.0)
+        glVertex2f( 1.25, 0.0); glVertex2f( 2.5, 5.0)
+        glVertex2f( 2.5, 5.0); glVertex2f( 2.5,-5.0)
+
+    elif letter.lower() == 'n':
+        glVertex2f(-2.5, 5.0); glVertex2f(-2.5,-5.0)
+        glVertex2f( 2.5, 5.0); glVertex2f( 2.5,-5.0)
+        glVertex2f(-2.5, 5.0); glVertex2f( 2.5,-5.0)
+
+    elif letter.lower() == 'o':
+        glVertex2f(-2.5, 3.5); glVertex2f(-2.5,-3.5)
+        glVertex2f(-2.5, 3.5); glVertex2f(-1.0, 5.0)
+        glVertex2f(-2.5,-3.5); glVertex2f(-1.0,-5.0)
+        glVertex2f( 1.0,-3.5); glVertex2f(-1.0,-3.5)
+        glVertex2f( 1.0, 3.5); glVertex2f(-1.0, 3.5)
+        glVertex2f( 2.5, 3.5); glVertex2f( 2.5,-3.5)
+        glVertex2f( 2.5, 3.5); glVertex2f( 1.0, 5.0)
+        glVertex2f( 2.5,-3.5); glVertex2f( 1.0,-5.0)
+
+    elif letter.lower() == 'p':
+        glVertex2f(-2.5, 5.0); glVertex2f(-2.5,-5.0)
+        glVertex2f(-2.5, 5.0); glVertex2f( 1.5, 5.0)
+        glVertex2f(-2.5, 0.0); glVertex2f( 1.5, 0.0)
+        glVertex2f( 2.5, 3.5); glVertex2f( 1.5, 3.5)
+        glVertex2f( 2.5, 1.5); glVertex2f( 1.5, 0.0)
+        glVertex2f( 2.5, 1.5); glVertex2f( 2.5, 3.5)
+
+    elif letter.lower() == 'q':
+        glVertex2f(-2.5, 3.5); glVertex2f(-2.5,-3.5)
+        glVertex2f(-2.5, 3.5); glVertex2f(-1.0, 5.0)
+        glVertex2f(-2.5,-3.5); glVertex2f(-1.0,-5.0)
+        glVertex2f( 1.0,-3.5); glVertex2f(-1.0,-3.5)
+        glVertex2f( 1.0, 3.5); glVertex2f(-1.0, 3.5)
+        glVertex2f( 2.5, 3.5); glVertex2f( 2.5,-3.5)
+        glVertex2f( 2.5, 3.5); glVertex2f( 1.0, 5.0)
+        glVertex2f( 2.5,-3.5); glVertex2f( 1.0,-5.0)
+        glVertex2f( 0.0, 0.0); glVertex2f(-2.5,-5.0)
+    
+    elif letter.lower() == 'r':
+        glVertex2f(-2.5, 5.0)
+        glVertex2f(-2.5,-5.0) #
+        glVertex2f(-2.5, 5.0)
+        glVertex2f( 1.0, 5.0) #
+        glVertex2f( 1.0, 5.0)
+        glVertex2f( 2.5, 3.5) #
+        glVertex2f( 2.5, 3.5)
+        glVertex2f( 2.5, 1.5) #
+        glVertex2f( 2.5, 1.5)
+        glVertex2f( 1.0, 1.5) #
+        glVertex2f( 1.0, 1.5)
+        glVertex2f(-2.5, 0.0) #
+        glVertex2f( 2.5,-1.5)
+        glVertex2f( 2.5,-5.0)
+    
+    elif letter.lower() == 's':
+        glVertex2f( 2.5, 5.0); glVertex2f(-1.0, 5.0) # _
+        glVertex2f(-2.5, 3.5); glVertex2f(-1.0, 5.0)
+        glVertex2f(-2.5, 3.5); glVertex2f(-2.5, 1.5)
+        glVertex2f(-1.0, 0.0); glVertex2f(-2.5, 1.5)
+        glVertex2f(-1.0, 0.0); glVertex2f( 1.0, 0.0) # _
+        glVertex2f( 1.0, 0.0); glVertex2f( 2.5,-1.5)
+        glVertex2f( 2.5,-3.5); glVertex2f( 2.5,-1.5)
+        glVertex2f( 2.5,-3.5); glVertex2f( 1.0,-5.0)
+        glVertex2f(-2.5,-5.0); glVertex2f( 1.0,-5.0) # _
+    
+    elif letter.lower() == 't':
+        glVertex2f(-2.5, 5.0); glVertex2f( 2.5, 5.0)
+        glVertex2f( 0.0, 5.0); glVertex2f( 0.0,-5.0)
+
+    elif letter.lower() == 'u':
+        glVertex2f(-2.5, 5.0); glVertex2f(-2.5,-3.5)
+        glVertex2f(-2.5,-3.5); glVertex2f(-1.0,-5.0) 
+        glVertex2f( 1.0,-5.0); glVertex2f(-1.0,-5.0) 
+        glVertex2f( 2.5,-3.5); glVertex2f( 1.0,-5.0) 
+        glVertex2f( 2.5, 5.0); glVertex2f( 2.5,-3.5)
+        
+    elif letter.lower() == 'v':
+        glVertex2f(-2.5, 5.0); glVertex2f( 0.0,-5.0)
+        glVertex2f( 2.5, 5.0); glVertex2f( 0.0,-5.0)
+        
+    elif letter.lower() == 'w':
+        glVertex2f(-2.5, 5.0); glVertex2f(-1.25,-5.0)
+        glVertex2f( 0.0, 5.0); glVertex2f(-1.25,-5.0)
+        glVertex2f( 0.0, 5.0); glVertex2f( 1.25,-5.0)
+        glVertex2f( 2.5, 5.0); glVertex2f( 1.25,-5.0)
+        
+    elif letter.lower() == 'x':
+        glVertex2f(-2.5, 5.0); glVertex2f( 2.5,-5.0)
+        glVertex2f( 2.5, 5.0); glVertex2f(-2.5,-5.0)
+        
+    elif letter.lower() == 'y':
+        glVertex2f(-2.5, 5.0); glVertex2f( 0.0, 0.0)
+        glVertex2f( 2.5, 5.0); glVertex2f( 0.0, 0.0)
+        glVertex2f( 0.0, 0.0); glVertex2f( 0.0,-5.0)
+        
+    elif letter.lower() == 'z':
+        glVertex2f(-2.5, 5.0); glVertex2f( 2.5, 5.0)
+        glVertex2f( 2.5, 5.0); glVertex2f(-2.5, 5.0)
+        glVertex2f(-2.5,-5.0); glVertex2f( 2.5,-5.0)
+    
+    glEnd()
+    glPopMatrix()
+
 # FUNGSI MENAMPILKAN SATELIT
 def Satelite():
     glColor3f(1.0, 2.0, 1.5) # WARNA SATELIT
@@ -121,6 +313,7 @@ def mov_bullet(value = 0):
         # PERULANGAN FUNGSI "mov_bullet" SAAT "trg_bullet" = False
         glutTimerFunc(1, mov_bullet, value)
 
+# FUNGSI UNTUK TOMBOL KEYBOARD
 def Control(key, x, y):
     global x_bullet, y_bullet, trg_bullet, trg_satelite, txt_meteor
 
@@ -142,6 +335,12 @@ def showScreen():
     glMatrixMode(GL_MODELVIEW)
     glLoadIdentity()
     Satelite()
+    
+    pos_letter = len(txt_meteor) / 2
+
+    for i in txt_meteor:
+        Letter(i, (txt_meteor.index(i)-pos_letter)*7.5)
+
     if col_bullet == False:
         Bullet()
         Meteor()
