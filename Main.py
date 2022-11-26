@@ -23,8 +23,7 @@ trg_bullet = False
 
 # TITIK KOORDINAT DAN TEKS METEOR
 x_meteor, y_meteor = 1025, rd.randint(50,675)
-txt_meteor = _txt[0][rd.randint(0, len(_txt[0])-1)]
-print(txt_meteor)
+txt_meteor = list(_txt[0][rd.randint(0, len(_txt[0])-1)])
 
 # FUNGSI MENAMPILKAN SATELIT
 def Satelite():
@@ -97,17 +96,22 @@ def mov_satelite(value = 0):
 
 # FUNGSI PERPINDAHAN METEOR
 def mov_meteor():
-    global p_input, y_satelite, x_meteor, y_meteor, x_bullet, y_bullet, col_bullet, trg_bullet, trg_satelite
+    global y_satelite, x_meteor, y_meteor, x_bullet, y_bullet, col_bullet, trg_bullet, trg_satelite, txt_meteor
     x_meteor -= 0.5
     
     # APABILA METEOR TERKENA PELURU (POSISI PELURU DAN METEOR SAMA)
     if x_bullet in range(int(x_meteor-25), int(x_meteor+25)):
         col_bullet = True
-        x_meteor, y_meteor = 1025, rd.randint(50, 675) # SPAWN ULANG METEOR
+        x_meteor, y_meteor = 1025, rd.randint(75, 650) # SPAWN ULANG METEOR
         x_bullet, y_bullet = 50, y_satelite # SPAWN ULANG PELURU
         col_bullet = False
         trg_bullet, trg_satelite = True, True
-        
+    
+    if len(txt_meteor) == 0:
+        trg_satelite = False
+        mov_satelite()
+        txt_meteor = list(_txt[0][rd.randint(0, len(_txt[0])-1)])
+
 # FUNGSI PERPINDAHAN PELURU
 def mov_bullet(value = 0):
     global x_bullet, y_bullet
@@ -118,19 +122,15 @@ def mov_bullet(value = 0):
         glutTimerFunc(1, mov_bullet, value)
 
 def Control(key, x, y):
-    global p_input, x_bullet, y_bullet, trg_bullet, trg_satelite
+    global x_bullet, y_bullet, trg_bullet, trg_satelite, txt_meteor
 
     if key == b' ':
         trg_satelite = False
-        mov_satelite(0)
-    if key == b'a':
-        p_input = 'a'
-    if key == b'b':
-        p_input = 'b'
-    if key == b'c':
-        p_input = 'c'
-    if key == b'd':
-        p_input = 'd'
+        mov_satelite()
+
+    if key == txt_meteor[0].encode():
+        txt_meteor.pop(0)
+    print(txt_meteor)
 
 def showScreen():
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
