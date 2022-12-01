@@ -4,6 +4,7 @@ from OpenGL.GLUT import *
 
 import random as rd
 import csv
+from time import time
 
 """
 BUG:
@@ -14,6 +15,8 @@ KEKURANGAN:
 - MENU AWAL
 - JUMLAH METEOR DAN PELURU
 """
+
+startTimer = time()
 
 _txt = []
 with open ('word.csv', 'r') as word:
@@ -294,12 +297,12 @@ def mov_satelite(value = 0):
 
     # PERULANGAN FUNGSI "mov_satelite" SAAT "trg_satelite" = False
     if trg_satelite == False:
-        glutTimerFunc(10, mov_satelite, value)
+        glutTimerFunc(1, mov_satelite, value)
 
 # FUNGSI PERPINDAHAN METEOR
 def mov_meteor():
     global y_satelite, x_meteor, y_meteor, x_bullet, y_bullet, col_bullet, trg_bullet, trg_satelite, txt_meteor
-    x_meteor -= 0.5
+    x_meteor -= 0.05
     
     # APABILA METEOR TERKENA PELURU (POSISI PELURU DAN METEOR SAMA)
     if x_bullet in range(int(x_meteor-25), int(x_meteor+25)):
@@ -315,25 +318,23 @@ def mov_meteor():
         txt_meteor = list(_txt[0][rd.randint(0, len(_txt[0])-1)])
 
 # FUNGSI PERPINDAHAN PELURU
-def mov_bullet(value = 0):
+def mov_bullet():
     global x_bullet, y_bullet
     if trg_bullet == False:
         x_bullet += 2
-        
-        # PERULANGAN FUNGSI "mov_bullet" SAAT "trg_bullet" = False
-        glutTimerFunc(1, mov_bullet, value)
 
 # FUNGSI UNTUK TOMBOL KEYBOARD
 def Control(key, x, y):
     global x_bullet, y_bullet, trg_bullet, trg_satelite, txt_meteor
-
-    if key == b' ':
-        trg_satelite = False
-        mov_satelite()
-
     if key == txt_meteor[0].encode():
         txt_meteor.pop(0)
-    print(txt_meteor)
+
+def Convert_Time(sec):
+  mins = sec // 60
+  sec = sec % 60
+  hours = mins // 60
+  mins = mins % 60
+  print(f"Time Lapsed : {int(hours)}:{int(mins)}:{int(sec)}")
 
 def showScreen():
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
@@ -345,7 +346,10 @@ def showScreen():
     glMatrixMode(GL_MODELVIEW)
     glLoadIdentity()
     Satelite()
-    
+    # timenow = time()
+    # tottime = Convert_Time(timenow-startTimer)
+    # print(tottime)
+    # glutBitmapCharacter(c_void_p(13))
     pos_letter = len(txt_meteor) / 2
 
     for i in txt_meteor:
