@@ -104,28 +104,7 @@ def round():
     glEnd()
     glPopMatrix()
 
-def titik():
-    glColor3ub(135,206,235)
-    glPointSize(5)
-    glBegin(GL_POINTS)
-    glVertex2f(-300,0)#a
-    glEnd()
-    
-    glColor3ub(255,255,255)
-    glPointSize(10)
-    glBegin(GL_POINTS)
-    glVertex2f(50,50)#b
-    glEnd()
-
-    for i in range(10):
-        glBegin(GL_POINTS)
-        glVertex2f(rd.randrange(-10,10),rd.randrange(-10,10))
-        t.sleep(1)
-        glEnd()
-
 # FUNGSI MENAMPILKAN SATELIT
-
-
 def Satelite():
     glPushMatrix()
     glColor3f(1.0, 2.0, 1.5)  # WARNA SATELIT
@@ -138,148 +117,102 @@ def Satelite():
         y = 50 * math.sin(theta)
         glVertex2f(x, y)
     glEnd()
+    glColor3ub(24,154,180)  # WARNA SATELIT 188, 168, 37
+    # POSISI PERPINDAHAN SATELIT BERADA
+    glBegin(GL_POLYGON)
+    for i in range(360):
+        theta = 2 * 3.1415926*i/360
+        x = 48 * math.cos(theta)
+        y = 48 * math.sin(theta)
+        glVertex2f(x, y)
+    glEnd()
+    glColor3f(1.0, 2.0, 1.5)  # WARNA SATELIT
+    # POSISI PERPINDAHAN SATELIT BERADA
+    glBegin(GL_POLYGON)
+    for i in range(360):
+        theta = 2 * 3.1415926*i/360
+        x = 45 * math.cos(theta)
+        y = 45 * math.sin(theta)
+        glVertex2f(x, y)
+    glEnd()
+    glColor3ub(24,154,180)  # WARNA SATELIT
+    # POSISI PERPINDAHAN SATELIT BERADA
+    glBegin(GL_POLYGON)
+    for i in range(360):
+        theta = 2 * 3.1415926*i/360
+        x = 30 * math.cos(theta)
+        y = 30 * math.sin(theta)
+        glVertex2f(x, y)
+    glEnd()
+    glColor3f(1.0, 2.0, 1.5)  # WARNA SATELIT
+    # POSISI PERPINDAHAN SATELIT BERADA
+    glBegin(GL_POLYGON)
+    for i in range(360):
+        theta = 2 * 3.1415926*i/360
+        x = 20 * math.cos(theta)
+        y = 20 * math.sin(theta)
+        glVertex2f(x, y)
+    glEnd()
+    glColor3ub(24,154,180)  # WARNA SATELIT
+    # POSISI PERPINDAHAN SATELIT BERADA
+    glTranslated(20, 0, 0)
+    glBegin(GL_POLYGON)
+    glVertex2f(0, 5)
+    glVertex2f(50, 5)
+    glVertex2f(50, -5)
+    glVertex2f(0, -5)
+    glEnd()
+    glColor3ub(24,154,180)  # WARNA SATELIT
+    # POSISI PERPINDAHAN SATELIT BERADA
+    glBegin(GL_POLYGON)
+    for i in range(360):
+        theta = 2 * 3.1415926*i/360
+        x = 5 * math.cos(theta)
+        y = 5 * math.sin(theta)
+        glVertex2f(x, y)
+    glEnd()
+    glColor3ub(24,154,180)  # WARNA SATELIT
+    # POSISI PERPINDAHAN SATELIT BERADA
+    glTranslated(50, 0,0)
+    glBegin(GL_POLYGON)
+    for i in range(360):
+        theta = 2 * 3.1415926*i/360
+        x = 5 * math.cos(theta)
+        y = 5 * math.sin(theta)
+        glVertex2f(x, y)
+    glEnd()
+
+    glColor3ub(255,255,255)  # WARNA SATELIT
+    # POSISI PERPINDAHAN SATELIT BERADA
+    # glTranslated(20, 0, 0)
+    glBegin(GL_POLYGON)
+    glVertex2f(0, 3)
+    glVertex2f(-48, 3)
+    glVertex2f(-48, -3)
+    glVertex2f(0, -3)
+    glEnd()
+    glColor3ub(255,255,255)  # WARNA SATELIT
+    # POSISI PERPINDAHAN SATELIT BERADA
+    glBegin(GL_POLYGON)
+    for i in range(360):
+        theta = 2 * 3.1415926*i/360
+        x = 3 * math.cos(theta)
+        y = 3 * math.sin(theta)
+        glVertex2f(x, y)
+    glEnd()
+    glColor3ub(255,255,255)  # WARNA SATELIT
+    # POSISI PERPINDAHAN SATELIT BERADA
+    glTranslated(-50, 0,0)
+    glBegin(GL_POLYGON)
+    for i in range(360):
+        theta = 2 * 3.1415926*i/360
+        x = 3 * math.cos(theta)
+        y = 3 * math.sin(theta)
+        glVertex2f(x, y)
+    glEnd()
     glPopMatrix()
 
-    square(satelite[0]+29, satelite[1]+4, 10, 10, satelite_color4)
-    square(satelite[0]+27, satelite[1]+8, 10, 10, satelite_color4)
-    square(satelite[0]+25, satelite[1]+12, 10, 10, satelite_color4)
-    square(satelite[0]+25, satelite[1]+16, 10, 10, satelite_color4)
-    square(satelite[0]+20, satelite[1]+20, 10, 10, satelite_color4)
-    square(satelite[0]+15, satelite[1]+24, 10, 10, satelite_color4)
-    square(satelite[0]+10, satelite[1]+28, 10, 10, satelite_color4)
-    square(satelite[0], satelite[1]+30, 10, 10, satelite_color4)
-
-    square(satelite[0]-29, satelite[1]+4, 10, 10, satelite_color4)
-    square(satelite[0]-27, satelite[1]+8, 10, 10, satelite_color4)
-    square(satelite[0]-25, satelite[1]+12, 10, 10, satelite_color4)
-    square(satelite[0]-25, satelite[1]+16, 10, 10, satelite_color4)
-    square(satelite[0]-20, satelite[1]+20, 10, 10, satelite_color4)
-    square(satelite[0]-15, satelite[1]+24, 10, 10, satelite_color4)
-    square(satelite[0]-10, satelite[1]+28, 10, 10, satelite_color4)
-    square(satelite[0], satelite[1]+30, 10, 10, satelite_color4)
-
-    square(satelite[0]-29, satelite[1]-4, 10, 10, satelite_color4)
-    square(satelite[0]-27, satelite[1]-8, 10, 10, satelite_color4)
-    square(satelite[0]-25, satelite[1]-12, 10, 10, satelite_color4)
-    square(satelite[0]-25, satelite[1]-16, 10, 10, satelite_color4)
-    square(satelite[0]-20, satelite[1]-20, 10, 10, satelite_color4)
-    square(satelite[0]-15, satelite[1]-24, 10, 10, satelite_color4)
-    square(satelite[0]-10, satelite[1]-28, 10, 10, satelite_color4)
-    square(satelite[0], satelite[1]-30, 10, 10, satelite_color4)
-
-    square(satelite[0]+29, satelite[1]-4, 10, 10, satelite_color4)
-    square(satelite[0]+27, satelite[1]-8, 10, 10, satelite_color4)
-    square(satelite[0]+25, satelite[1]-12, 10, 10, satelite_color4)
-    square(satelite[0]+25, satelite[1]-16, 10, 10, satelite_color4)
-    square(satelite[0]+20, satelite[1]-20, 10, 10, satelite_color4)
-    square(satelite[0]+15, satelite[1]-24, 10, 10, satelite_color4)
-    square(satelite[0]+10, satelite[1]-28, 10, 10, satelite_color4)
-    square(satelite[0], satelite[1]-30, 10, 10, satelite_color4)
-
-    square(satelite[0]+52, satelite[1], 10, 10, satelite_color1)
-    square(satelite[0]+50, satelite[1]+10, 10, 10, satelite_color1)
-    square(satelite[0]+48, satelite[1]+20, 10, 10, satelite_color1)
-    square(satelite[0]+46, satelite[1]+26, 10, 10, satelite_color1)
-    square(satelite[0]+42, satelite[1]+30, 10, 10, satelite_color1)
-    square(satelite[0]+38, satelite[1]+36, 10, 10, satelite_color1)
-    square(satelite[0]+32, satelite[1]+40, 10, 10, satelite_color1)
-    square(satelite[0]+28, satelite[1]+44, 10, 10, satelite_color1)
-    square(satelite[0]+22, satelite[1]+48, 10, 10, satelite_color1)
-    square(satelite[0]+12, satelite[1]+50, 10, 10, satelite_color1)
-    square(satelite[0]+2, satelite[1]+52, 10, 10, satelite_color1)
-
-    square(satelite[0]-52, satelite[1], 10, 10, satelite_color1)
-    square(satelite[0]-50, satelite[1]+10, 10, 10, satelite_color1)
-    square(satelite[0]-48, satelite[1]+20, 10, 10, satelite_color1)
-    square(satelite[0]-46, satelite[1]+26, 10, 10, satelite_color1)
-    square(satelite[0]-42, satelite[1]+30, 10, 10, satelite_color1)
-    square(satelite[0]-38, satelite[1]+36, 10, 10, satelite_color1)
-    square(satelite[0]-32, satelite[1]+40, 10, 10, satelite_color1)
-    square(satelite[0]-28, satelite[1]+44, 10, 10, satelite_color1)
-    square(satelite[0]-22, satelite[1]+48, 10, 10, satelite_color1)
-    square(satelite[0]-12, satelite[1]+50, 10, 10, satelite_color1)
-    square(satelite[0]-2, satelite[1]+52, 10, 10, satelite_color1)
-
-    square(satelite[0]+52, satelite[1], 10, 10, satelite_color1)
-    square(satelite[0]+50, satelite[1]-10, 10, 10, satelite_color1)
-    square(satelite[0]+48, satelite[1]-20, 10, 10, satelite_color1)
-    square(satelite[0]+46, satelite[1]-26, 10, 10, satelite_color1)
-    square(satelite[0]+42, satelite[1]-30, 10, 10, satelite_color1)
-    square(satelite[0]+38, satelite[1]-36, 10, 10, satelite_color1)
-    square(satelite[0]+32, satelite[1]-40, 10, 10, satelite_color1)
-    square(satelite[0]+28, satelite[1]-44, 10, 10, satelite_color1)
-    square(satelite[0]+22, satelite[1]-48, 10, 10, satelite_color1)
-    square(satelite[0]+12, satelite[1]-50, 10, 10, satelite_color1)
-    square(satelite[0]+2, satelite[1]-52, 10, 10, satelite_color1)
-
-    square(satelite[0]-52, satelite[1], 10, 10, satelite_color1)
-    square(satelite[0]-50, satelite[1]-10, 10, 10, satelite_color1)
-    square(satelite[0]-48, satelite[1]-20, 10, 10, satelite_color1)
-    square(satelite[0]-46, satelite[1]-26, 10, 10, satelite_color1)
-    square(satelite[0]-42, satelite[1]-30, 10, 10, satelite_color1)
-    square(satelite[0]-38, satelite[1]-36, 10, 10, satelite_color1)
-    square(satelite[0]-32, satelite[1]-40, 10, 10, satelite_color1)
-    square(satelite[0]-28, satelite[1]-44, 10, 10, satelite_color1)
-    square(satelite[0]-22, satelite[1]-48, 10, 10, satelite_color1)
-    square(satelite[0]-12, satelite[1]-50, 10, 10, satelite_color1)
-    square(satelite[0]-2, satelite[1]-52, 10, 10, satelite_color1)
-
-    square(satelite[0]+8, satelite[1]-3, 7, 7, satelite_color2)
-    square(satelite[0]+8, satelite[1]+3, 7, 7, satelite_color2)
-    square(satelite[0]+15, satelite[1]-3, 7, 7, satelite_color2)
-    square(satelite[0]+15, satelite[1]+3, 7, 7, satelite_color2)
-    square(satelite[0]+22, satelite[1]-3, 7, 7, satelite_color2)
-    square(satelite[0]+22, satelite[1]+3, 7, 7, satelite_color2)
-    square(satelite[0]+29, satelite[1]-3, 7, 7, satelite_color2)
-    square(satelite[0]+29, satelite[1]+3, 7, 7, satelite_color2)
-    square(satelite[0]+36, satelite[1]-3, 7, 7, satelite_color2)
-    square(satelite[0]+36, satelite[1]+3, 7, 7, satelite_color2)
-    square(satelite[0]+43, satelite[1]-3, 7, 7, satelite_color2)
-    square(satelite[0]+43, satelite[1]+3, 7, 7, satelite_color2)
-    square(satelite[0]+50, satelite[1]-3, 7, 7, satelite_color2)
-    square(satelite[0]+50, satelite[1]+3, 7, 7, satelite_color2)
-    square(satelite[0]+57, satelite[1]-3, 7, 7, satelite_color2)
-    square(satelite[0]+57, satelite[1]+3, 7, 7, satelite_color2)
-    square(satelite[0]+64, satelite[1]-3, 7, 7, satelite_color2)
-    square(satelite[0]+64, satelite[1]+3, 7, 7, satelite_color2)
-    square(satelite[0]+71, satelite[1]-3, 7, 7, satelite_color2)
-    square(satelite[0]+71, satelite[1]+3, 7, 7, satelite_color2)
-    square(satelite[0]+78, satelite[1]-3, 7, 7, satelite_color2)
-    square(satelite[0]+78, satelite[1]+3, 7, 7, satelite_color2)
-    square(satelite[0]+85, satelite[1]-3, 7, 7, satelite_color2)
-    square(satelite[0]+85, satelite[1]+3, 7, 7, satelite_color2)
-    square(satelite[0]+92, satelite[1], 7, 7, satelite_color2)
-
-    square(satelite[0]+8, satelite[1], 7, 7, satelite_color3)
-    square(satelite[0]+10, satelite[1]+4, 7, 7, satelite_color3)
-    square(satelite[0]+10, satelite[1]-4, 7, 7, satelite_color3)
-
-    square(satelite[0]+15, satelite[1]-5, 7, 7, satelite_color3)
-    square(satelite[0]+15, satelite[1]+5, 7, 7, satelite_color3)
-    square(satelite[0]+22, satelite[1]-5, 7, 7, satelite_color3)
-    square(satelite[0]+22, satelite[1]+5, 7, 7, satelite_color3)
-    square(satelite[0]+29, satelite[1]-5, 7, 7, satelite_color3)
-    square(satelite[0]+29, satelite[1]+5, 7, 7, satelite_color3)
-    square(satelite[0]+36, satelite[1]-5, 7, 7, satelite_color3)
-    square(satelite[0]+36, satelite[1]+5, 7, 7, satelite_color3)
-    square(satelite[0]+43, satelite[1]-5, 7, 7, satelite_color3)
-    square(satelite[0]+43, satelite[1]+5, 7, 7, satelite_color3)
-    square(satelite[0]+50, satelite[1]-5, 7, 7, satelite_color3)
-    square(satelite[0]+50, satelite[1]+5, 7, 7, satelite_color3)
-    square(satelite[0]+57, satelite[1]-5, 7, 7, satelite_color3)
-    square(satelite[0]+57, satelite[1]+5, 7, 7, satelite_color3)
-    square(satelite[0]+64, satelite[1]-5, 7, 7, satelite_color3)
-    square(satelite[0]+64, satelite[1]+5, 7, 7, satelite_color3)
-    square(satelite[0]+71, satelite[1]-5, 7, 7, satelite_color3)
-    square(satelite[0]+71, satelite[1]+5, 7, 7, satelite_color3)
-    square(satelite[0]+78, satelite[1]-5, 7, 7, satelite_color3)
-    square(satelite[0]+78, satelite[1]+5, 7, 7, satelite_color3)
-    square(satelite[0]+85, satelite[1]-5, 7, 7, satelite_color3)
-    square(satelite[0]+85, satelite[1]+5, 7, 7, satelite_color3)
-
-    square(satelite[0]+94, satelite[1], 7, 7, satelite_color3)
-    square(satelite[0]+92, satelite[1]+4, 7, 7, satelite_color3)
-    square(satelite[0]+92, satelite[1]-4, 7, 7, satelite_color3)
+   
 
 
 # FUNGSI MENAMPILKAN BULLET
@@ -332,50 +265,7 @@ def Meteor(x, y):
     glVertex2f(-4.9, 33.1)
     glEnd()
     round()
-    # square(0, 30, 10, 10, meteor_color)
-    # square(2, 29.8, 10, 10, meteor_color)
-    # square(5.9, 29.6, 10, 10, meteor_color)
-    # square(8, 28, 10, 10, meteor_color)
-    # square(11.9, 27.6, 10, 10, meteor_color)
-    # square(15, 25, 10, 10, meteor_color)
-    # square(22.3, 23, 10, 10, meteor_color)
-    # square(24, 19, 10, 10, meteor_color)
-    # square(26.2, 15.1, 10, 10, meteor_color)
-    # square(27.5, 8.9, 10, 10, meteor_color)
-    # square(28.5, 4.96, 10, 10, meteor_color)
-    # square(27.5, 0.4, 10, 10, meteor_color)
-    # square(26.4, -4.5, 10, 10, meteor_color)
-    # square(21.7, -8.8, 10, 10, meteor_color)
-    # square(19.8, -13.9, 10, 10, meteor_color)
-    # square(19.3, -15.4, 10, 10, meteor_color)
-    # square(18.3, -21.8, 10, 10, meteor_color)
-    # square(13.4, -24.8, 10, 10, meteor_color)
-    # square(9.44, -28.02, 10, 10, meteor_color)
-    # square(5.7, -29.8, 10, 10, meteor_color)
-    # square(0, -30, 10, 10, meteor_color)
-    # square(-4.4, -28.9, 10, 10, meteor_color)
-    # square(-7.9, -27.6, 10, 10, meteor_color)
-    # square(-14.3, -25.1, 10, 10, meteor_color)
-    # square(-18.7, -23.6, 10, 10, meteor_color)
-    # square(-23.1, -21.3, 10, 10, meteor_color)
-    # square(-26.4, -19.5, 10, 10, meteor_color)
-    # square(-28.9, -14.5, 10, 10, meteor_color)
-    # square(-30.7, -12.15, 10, 10, meteor_color)
-    # square(-31.2, -8.4, 10, 10, meteor_color)
-    # square(-32.3, -5.07, 10, 10, meteor_color)
-    # square(-31.2,  0, 10, 10, meteor_color)
-    # square(-31.08, 5.6, 10, 10, meteor_color)
-    # square(-27.3, 8.3, 10, 10, meteor_color)
-    # square(-26.06, 13.8, 10, 10, meteor_color)
-    # square(-25.5, 19.3, 10, 10, meteor_color)
-    # square(-24.8, 21.17, 10, 10, meteor_color)
-    # square(-18.2, 20.2, 10, 10, meteor_color)
-    # square(-14.4, 24.4, 10, 10, meteor_color)
-    # square(-13.2, 28.2, 10, 10, meteor_color)
-    # square(-11.5, 30.19, 10, 10, meteor_color)
-    # square(-6.9, 32.2, 10, 10, meteor_color)
-    # square(-4.9, 33.1, 10, 10, meteor_color)
-
+   
     glPopMatrix()
 
 # FUNGSI PERPINDAHAN SATELIT
